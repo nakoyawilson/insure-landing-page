@@ -97,7 +97,7 @@ button {
   background-image: url("../images/bg-pattern-mobile-nav.svg");
   background-repeat: no-repeat;
   background-position: bottom;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 8rem;
   width: 100%;
@@ -110,6 +110,10 @@ button {
 
 .navigation.open {
   transform: translateX(0);
+}
+
+.scroll-lock {
+  overflow: hidden;
 }
 
 .nav-links {
