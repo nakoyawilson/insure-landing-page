@@ -167,6 +167,10 @@ button {
   bottom: -176px;
 }
 
+.intro-image {
+  width: 100%;
+}
+
 .intro .btn {
   margin: 3.2rem auto 0;
   width: 14.6rem;
