@@ -1,9 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap");
+
+:root {
+  --primary-font: "Karla", sans-serif;
+  --secondary-font: "DM Serif Display", serif;
+  --dark-violet: hsl(256, 26%, 20%);
+  --grayish-blue: hsl(216, 30%, 68%);
+  --very-dark-violet: hsl(271, 9%, 17%);
+  --dark-grayish-violet: hsl(273, 4%, 51%);
+  --light-gray: hsla(0, 0%, 86%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --pure-white: hsl(0, 0%, 100%);
+  --pale-violet: hsl(296, 30%, 68%);
+  --gray: hsl(271, 5%, 51%);
+}
+
+/* General Styles */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--primary-font);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+img,
+svg {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* Shared Styles */
+
+.paragraph {
+  line-height: 2.6rem;
+  margin-top: 1.6rem;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  text-align: center;
+  letter-spacing: 1.5px;
+  color: var(--pure-white);
+  text-transform: uppercase;
+  padding: 1.3rem 0 1.2rem;
+  border: 1.5px solid var(--pure-white);
+}
+
+.heading {
+  font-family: var(--secondary-font);
+  font-size: 4.8rem;
+  line-height: 4.8rem;
+  letter-spacing: -0.666667px;
+}
+
+/* Header */
+.header {
+  padding: 2.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.navigation {
+  background-color: var(--very-dark-violet);
+  background-image: url("../images/bg-pattern-mobile-nav.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  position: absolute;
+  left: 0;
+  top: 8rem;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  padding: 4rem 2.4rem;
+  transform: translateX(100%);
+  transition: all 0.5s ease-in-out;
+}
+
+.navigation.open {
+  transform: translateX(0);
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 4rem;
+  letter-spacing: 1.36364px;
+  color: var(--pure-white);
+  text-transform: uppercase;
+}
+
+.nav-link.nav-btn {
+  display: block;
+  border: 1.5px solid var(--pure-white);
+}
+
+/* Main */
+
+.main {
+  padding-bottom: 14rem;
+}
+
+.intro {
+  background-color: var(--dark-violet);
+  background-image: url("../images/bg-pattern-intro-left-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top left;
+  padding: 9.3rem 2.4rem;
+  color: var(--pure-white);
+  text-align: center;
+  position: relative;
+}
+
+.intro::after {
+  content: "";
+  width: 124px;
+  height: 330px;
+  background-image: url("../images/bg-pattern-intro-right-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  right: 0;
+  bottom: -176px;
+}
+
+.intro .btn {
+  margin: 3.2rem auto 0;
+  width: 14.6rem;
+}
+
+.different {
+  text-align: center;
+  color: var(--very-dark-violet);
+}
+
+.different .heading {
+  position: relative;
+  margin-top: 18.1rem;
+}
+
+.different .heading::before {
+  content: "";
+  width: 150px;
+  height: 1px;
+  background: var(--pale-violet);
+  position: absolute;
+  top: -4rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+}
+
+.container {
+  margin: 8rem auto 0;
+  width: min(87.2%, 327px);
+  display: flex;
+  flex-direction: column;
+  gap: 5.6rem;
+}
+
+.subheading {
+  font-family: var(--secondary-font);
+  font-size: 2.8rem;
+  line-height: 3.8rem;
+  letter-spacing: -0.388889px;
+  position: relative;
+  margin-top: 11.8rem;
+}
+
+.subheading::before {
+  content: "";
+  width: 86px;
+  height: 86px;
+  position: absolute;
+  top: -11.8rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.snappy-process .subheading::before {
+  background-image: url("../images/icon-snappy-process.svg");
+}
+
+.affordable-prices .subheading::before {
+  background-image: url("../images/icon-affordable-prices.svg");
+}
+
+.people-first .subheading::before {
+  background-image: url("../images/icon-people-first.svg");
+}
+
+.different .paragraph {
+  color: var(--gray);
+}
+
+.how-we-work {
+  background-color: var(--dark-violet);
+  background-image: url("../images/bg-pattern-how-we-work-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  width: min(87.2%, 327px);
+  margin: 14rem auto 0;
+  text-align: center;
+  color: var(--pure-white);
+  padding: 7.2rem 2.4rem;
+}
+
+.how-we-work .heading {
+  font-family: var(--secondary-font);
+  font-size: 4rem;
+  line-height: 4rem;
+  letter-spacing: -0.555556px;
+}
+
+.how-we-work .btn {
+  margin-top: 4rem;
+  width: 16rem;
+}
+
 /* Footer Section */
 
+.footer {
+  background-color: var(--very-light-gray);
+  background-image: url("../images/bg-pattern-footer-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  padding: 8.8rem 2.4rem 0;
+}
+
+.footer .logo {
+  margin-inline: auto;
+}
+
+.social-icons {
+  margin-top: 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.footer-heading,
+.footer-link {
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  text-align: center;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.footer-heading {
+  color: var(--gray);
+  margin: 4rem 0 3.6rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-link {
+  color: var(--dark-violet);
+}
+
 .attribution {
-  font-size: 11px;
+  color: var(--gray);
+  margin-top: 8.8rem;
+  font-size: 1.1rem;
   text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--dark-violet);
 }
