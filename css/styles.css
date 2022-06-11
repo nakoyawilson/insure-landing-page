@@ -96,7 +96,7 @@ button {
   background-color: var(--very-dark-violet);
   background-image: url("../images/bg-pattern-mobile-nav.svg");
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: bottom center;
   position: fixed;
   left: 0;
   top: 8rem;
@@ -133,9 +133,11 @@ button {
   text-transform: uppercase;
 }
 
-.nav-link.nav-btn {
-  display: block;
+.nav-btn {
   border: 1.5px solid var(--pure-white);
+  width: 100%;
+  text-align: center;
+  padding: 0.9rem 0 0.7rem;
 }
 
 /* Main */
